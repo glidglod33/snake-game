@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simpele Snake Game</title>
+    <link rel="stylesheet" href="start-pagina.css">
 </head>
 <body>
-    
+    <div class="game-container">
+        <h1>Snake Game</h1>
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div class="score-container">
+            Score: <span id="score">0</span>
+        </div>
+        <p>Gebruik de pijltjestoetsen om te bewegen!</p>
+    </div>
+    <script src="start-pagina.js"></script>
 </body>
 </html>

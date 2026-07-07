@@ -1,20 +1,76 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" data-theme="terminal" data-mode="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simpele Snake Game</title>
-    <link rel="stylesheet" href="start-pagina.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snake // Terminal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="snake-game.css">
 </head>
 <body>
-    <div class="game-container">
-        <h1>Snake Game</h1>
-        <canvas id="gameCanvas" width="400" height="400"></canvas>
-        <div class="score-container">
-            Score: <span id="score">0</span>
-        </div>
-        <p>Gebruik de pijltjestoetsen om te bewegen!</p>
+
+<div class="cabinet">
+
+  <div class="topbar">
+    <div class="title">SNAKE</div>
+
+    <div class="topbar-actions">
+      <div class="stats">
+        <div><span class="stat-label">SCORE</span> <span class="stat-value" id="score">0</span></div>
+        <div><span class="stat-label">BEST</span> <span class="stat-value" id="best">0</span></div>
+      </div>
+
+      <button class="icon-btn" id="modeToggle" title="Licht / donker">🌙</button>
+      <button class="icon-btn" id="settingsToggle" title="Instellingen">⚙</button>
     </div>
-    <script src="start-pagina.js"></script>
+  </div>
+
+  <div class="screen-wrap">
+    <canvas id="game" width="400" height="400"></canvas>
+    <div class="scanlines"></div>
+    <div class="vignette"></div>
+
+    <div class="overlay show" id="overlay">
+      <h2 id="overlayTitle">SNAKE</h2>
+      <p id="overlayMsg">Pijltjes of WASD om te bewegen</p>
+      <button id="startBtn">START</button>
+    </div>
+
+    <div class="settings-panel" id="settingsPanel">
+      <div class="settings-header">
+        <span>INSTELLINGEN</span>
+        <button class="close-settings" id="closeSettings">&times;</button>
+      </div>
+
+      <div class="settings-row">
+        <span class="settings-label">Thema</span>
+        <div class="swatch-row" id="themeRow"></div>
+      </div>
+
+      <div class="settings-row">
+        <span class="settings-label">Skin</span>
+        <div class="swatch-row" id="skinRow"></div>
+      </div>
+
+      <div class="settings-row">
+        <span class="settings-label">Snelheid</span>
+        <div class="seg-control" id="speedRow">
+          <button data-speed="150">Traag</button>
+          <button data-speed="110">Normaal</button>
+          <button data-speed="70">Snel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span><kbd>&larr;&uarr;&darr;&rarr;</kbd> / <kbd>WASD</kbd> bewegen</span>
+    <span><kbd>SPATIE</kbd> pauze</span>
+  </div>
+
+</div>
+
+<script src="snake-game.js"></script>
 </body>
 </html>
