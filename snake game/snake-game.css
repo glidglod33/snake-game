@@ -20,6 +20,20 @@ canvas {
 }
 
 .score-container {
-    font-size: 24px;
-    margin-top: 10px;
+/* ================= THEMES ================= */
+
+/* Terminal */
+[data-theme="terminal"][data-mode="dark"]{
+  --page-bg:#030705; --cabinet-bg-1:#0c1412; --cabinet-bg-2:#060a09; --cabinet-border:#15241e;
+  --grid-bg:#0b1210; --grid-line:rgba(57,255,142,0.05); --ink:#c9ffe2;
+  --accent:#39ff8e; --accent-dim:#1f7a4d; --food:#ff5b54;
+  --panel-bg:#0c1412; --panel-border:#1c302a; --btn-ink:#06120c;
+}
+[data-theme="terminal"][data-mode="light"]{
+  --page-bg:#eef6f0; --cabinet-bg-1:#ffffff; --cabinet-bg-2:#f3f9f4; --cabinet-border:#cfe8d8;
+  --grid-bg:#f6fbf7; --grid-line:rgba(20,120,70,0.08); --ink:#14301f;
+  --accent:#1f9d58; --accent-dim:#8fcaa8; --food:#e2453d;
+  --panel-bg:#ffffff; --panel-border:#cfe8d8; --btn-ink:#ffffff;
+}
+
 }
